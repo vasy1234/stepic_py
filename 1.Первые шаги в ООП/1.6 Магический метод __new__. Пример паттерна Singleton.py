@@ -68,22 +68,22 @@ __new__ вызывается пред созданием обьекта клас
 # obj = AbstractClass()
 
 
-# class SingletonFive:
-#     __isinstance = None
-#     __n = 1
-#
-#     def __new__(cls, *args, **kwargs):
-#         if cls.__n <= 5:
-#             cls.__isinstance = super().__new__(cls)
-#             cls.__n += 1
-#         return cls.__isinstance
-#
-#     def __init__(self, name):
-#         self.name = name
-#
-#
-# objs = [SingletonFive(str(n)) for n in range(10)]
-# # for el in objs:
-# #     print(el.name, end='')
+class SingletonFive:
+    __isinstance = None
+    __n = 1
+
+    def __new__(cls, *args, **kwargs):
+        if cls.__n <= 5:
+            cls.__isinstance = super().__new__(cls)
+            cls.__n += 1
+        return cls.__isinstance
+
+    def __init__(self, name):
+        self.name = name
+
+
+objs = [SingletonFive(str(n)) for n in range(10)]
+for el in objs:
+    print(el.name, end='')
 
 
